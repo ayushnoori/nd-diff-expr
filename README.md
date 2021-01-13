@@ -1,14 +1,14 @@
 # About
-> In [Noori et al. (2020)](https://doi.org/10.1016/j.nbd.2020.105225), we hypothesized that there is a shared gene expression signature underlying neurodegenerative proteinopathies including Alzheimer’s disease (AD), Lewy body diseases (LBD), and the amyotrophic lateral sclerosis and frontotemporal dementia (ALS-FTD) spectrum. To test this hypothesis, we performed a systematic review and meta-analysis of human CNS transcriptomic datasets in the public [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) and [ArrayExpress](https://www.ebi.ac.uk/arrayexpress/) repositories. Here, we provide the source code to generate the data quality reports and perform differential expression analyses for these datasets. Please see our accompanying publication in *Data In Brief* for additional information.
+> In [Noori et al. (2020)](https://doi.org/10.1016/j.nbd.2020.105225), we performed a systematic review and meta-analysis of human CNS transcriptomic datasets in the public [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) and [ArrayExpress](https://www.ebi.ac.uk/arrayexpress/) repositories across Alzheimer's disease (AD), Lewy body diseases (LBD), and the amyotrophic lateral sclerosis and frontotemporal dementia (ALS-FTD) disease spectrum. Here, we provide the source code to generate the data quality reports and perform differential expression analyses for these datasets. Please see our accompanying publication in *Data In Brief* for additional information.
 
 <br>
 
-# Setup
-Install [R](https://www.r-project.org/) to run our code.
+# Prerequisites
+Please install [R](https://www.r-project.org/) to run our code, as well as all requisite packages.
 <br><br>
 
-# Code Availability
-Our source code is available via GitHub at [ayushnoori.github.io/nd-diff-expr](https://ayushnoori.github.io/nd-diff-expr/).
+# Vignette
+Our vignette is available at [ayushnoori.github.io/nd-diff-expr](https://ayushnoori.github.io/nd-diff-expr/).
 <br><br>
 
 # Citation
@@ -28,4 +28,4 @@ Our source code is available via GitHub at [ayushnoori.github.io/nd-diff-expr](h
 <br><br>
 
 # Acknowledgements
-TThis work was supported by the Alzheimer’s Association (AACF-17-524184 to AS-P), the National Institute of Aging (K08AG064039 to AS-P and P30AG062421 to BTH and SD), the Rainwater Charitable Foundation (to BTH), and a MassLife Sciences MassCATS award (to BTH and SD). The funding sources had no role in study design; data collection, analysis and interpretation; or manuscript preparation.
+This work was supported by the Alzheimer’s Association (AACF-17-524184 to AS-P), the National Institute of Aging (K08AG064039 to AS-P and P30AG062421 to BTH and SD), the Rainwater Charitable Foundation (to BTH), and a MassLife Sciences MassCATS award (to BTH and SD). The funding sources had no role in study design; data collection, analysis and interpretation; or manuscript preparation.

@@ -1,7 +1,7 @@
 ---
 title: | 
- <center>Central Nervous System Differential Gene Expression Data across</center>
- <center>Alzheimer’s Disease, Lewy Body Diseases, and ALS-FTD</center>
+ <center>Differential Gene Expression Data from Human Central Nervous System across Alzheimer’s Disease,</center>
+ <center>Lewy Body Diseases, and Amyotrophic Lateral Sclerosis and Frontotemporal Dementia Spectrum</center>
 author: Ayush Noori, Aziz M. Mezlini, Bradley T. Hyman, Alberto Serrano-Pozo, Sudeshna Das
 bibliography: references.bib
 csl: neurobiology-of-disease.csl
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE)
 
 # Overview
 
->In [Noori et al. (2020)](https://doi.org/10.1016/j.nbd.2020.105225), we hypothesized that there is a shared gene expression signature underlying neurodegenerative proteinopathies including Alzheimer’s disease (AD), Lewy body diseases (LBD), and the amyotrophic lateral sclerosis and frontotemporal dementia (ALS-FTD) spectrum. To test this hypothesis, we performed a systematic review and meta-analysis of human CNS transcriptomic datasets in the public [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) and [ArrayExpress](https://www.ebi.ac.uk/arrayexpress/) repositories. Here, we provide the source code to generate the data quality reports and perform differential expression analyses for these datasets. Please see our accompanying publication in *Data In Brief* for additional information.
+>In [Noori et al. (2020)](https://doi.org/10.1016/j.nbd.2020.105225), we performed a systematic review and meta-analysis of human CNS transcriptomic datasets in the public [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) and [ArrayExpress](https://www.ebi.ac.uk/arrayexpress/) repositories across Alzheimer's disease (AD), Lewy body diseases (LBD), and the amyotrophic lateral sclerosis and frontotemporal dementia (ALS-FTD) disease spectrum. Here, we provide the source code to generate the data quality reports and perform differential expression analyses for these datasets. Please see our accompanying publication in *Data In Brief* for additional information.
 
 
 # Setup
@@ -219,7 +219,7 @@ mod0 = model.matrix(~1, gset)
 
 ```
 
-The number of significant surrogate variables ($\le 4$) is estimated using the asymptotic approach proposed by @leek_asymptotic_2011, then SVA is performed [@leek_sva_2012; @leek_capturing_2007].
+The number of significant surrogate variables ($\le$ 4) is estimated using the asymptotic approach proposed by @leek_asymptotic_2011, then SVA is performed [@leek_sva_2012; @leek_capturing_2007].
 
 ``` {r sva}
 
@@ -345,7 +345,7 @@ EnhancedVolcano(dat,
 
 **Research Paper:** Noori, A.,<sup>1,2,3,4</sup>, Mezlini, A.M.,<sup>2,3,4,5</sup>, Hyman, B.T.,<sup>2,4,5</sup>, Serrano-Pozo, A.,<sup>2,4,5*</sup>, Das, S.,<sup>2,3,4,5</sup>. 2020. Systematic review and meta-analysis of human transcriptomics reveals neuroinflammation, deficient energy metabolism, and proteostasis failure across neurodegeneration. Neurobiology of Disease  149, 105225. https://doi.org/10.1016/j.nbd.2020.105225
 
-**Methods Paper:** Noori, A.,<sup>1,2,3,4</sup>, Mezlini, A.M.,<sup>2,3,4,5</sup>, Hyman, B.T.,<sup>2,4,5</sup>, Serrano-Pozo, A.,<sup>2,4,5*</sup>, Das, S.,<sup>2,3,4,5</sup>. 2021. Central nervous system differential gene expression data across Alzheimer’s disease, Lewy body diseases, and ALS-FTD. In press.
+**Methods Paper:** Noori, A.,<sup>1,2,3,4</sup>, Mezlini, A.M.,<sup>2,3,4,5</sup>, Hyman, B.T.,<sup>2,4,5</sup>, Serrano-Pozo, A.,<sup>2,4,5*</sup>, Das, S.,<sup>2,3,4,5</sup>. 2021. Differential gene expression data from human central nervous system across Alzheimer’s disease, Lewy body diseases, and amyotrophic lateral sclerosis and frontotemporal dementia spectrum. In press.
 
 ### Affiliations
 1.	Harvard College, Cambridge, MA 02138, United States of America
