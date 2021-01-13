@@ -489,9 +489,9 @@ Alzheimer’s Disease, Lewy Body Diseases, and ALS-FTD
 </div>
 <div id="quality-control" class="section level1">
 <h1>Quality Control</h1>
-<p>The <code>arrayQualityMetrics</code> package is used to generate data quality reports. Outliers are detected via boxplots, MA plots, and inter-array distance comparison <span class="citation">(Kauffmann et al., 2009; Kauffmann and Huber, 2010)</span>.</p>
+<p>The <code>arrayQualityMetrics</code> package is used to generate data quality reports. Outliers are detected via boxplots, MA plots, and inter-array distance comparison <span class="citation">(Kauffmann et al., 2009; Kauffmann and Huber, 2010)</span>. <strong>The full data quality report for GSE1297 is available <a href="https://ayushnoori.github.io/nd-diff-expr/QC">here</a>.</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># generate quality control report</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>qc =<span class="st"> </span><span class="kw">arrayQualityMetrics</span>(gset, <span class="dt">reporttitle =</span><span class="st">&quot;GSE1297 QC&quot;</span>, <span class="dt">force =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>qc =<span class="st"> </span><span class="kw">arrayQualityMetrics</span>(gset, <span class="dt">outdir =</span> <span class="st">&quot;QC&quot;</span>, <span class="dt">reporttitle =</span><span class="st">&quot;GSE1297 QC - CA1, GPL96&quot;</span>, <span class="dt">force =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="co"># identify outliers</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>array =<span class="st"> </span>qc<span class="op">$</span>arrayTable[, <span class="dv">3</span><span class="op">:</span><span class="dv">5</span>]</span>

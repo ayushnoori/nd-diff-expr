@@ -134,12 +134,12 @@ pData(gset)$Condition = dis
 
 # Quality Control
 
-The `arrayQualityMetrics` package is used to generate data quality reports. Outliers are detected via boxplots, MA plots, and inter-array distance comparison [@kauffmann_microarray_2010; @kauffmann_arrayqualitymetrics_2009].
+The `arrayQualityMetrics` package is used to generate data quality reports. Outliers are detected via boxplots, MA plots, and inter-array distance comparison [@kauffmann_microarray_2010; @kauffmann_arrayqualitymetrics_2009]. **The full data quality report for GSE1297 is available [here](https://ayushnoori.github.io/nd-diff-expr/QC).**
 
 ``` {r qc-report}
 
 # generate quality control report
-qc = arrayQualityMetrics(gset, reporttitle ="GSE1297 QC", force = TRUE)
+qc = arrayQualityMetrics(gset, outdir = "QC", reporttitle ="GSE1297 QC - CA1, GPL96", force = TRUE)
 
 # identify outliers
 array = qc$arrayTable[, 3:5]

@@ -1,8 +1,330 @@
-<?xml version="1.0" encoding="ISO8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<title>GSE1297 QC - CA1, GPL96</title>
+
+<script language="JavaScript" src="arrayQualityMetrics.js"></script>
+<link rel="stylesheet" type="text/css" href="arrayQualityMetrics.css"></link>
+</head>
+<body onload="reportinit()"><hr><h1>GSE1297 QC - CA1, GPL96</h1><hr><UL><a href="#S1"><br><li class='tocsection'>Section 1: Between array comparison</li><UL></a><li class='tocmodule'>Distances between arrays</li><li class='tocmodule'>Principal Component Analysis</li></UL><a href="#S2"><br><li class='tocsection'>Section 2: Array intensity distributions</li><UL></a><li class='tocmodule'>Boxplots</li><li class='tocmodule'>Density plots</li></UL><a href="#S3"><br><li class='tocsection'>Section 3: Variance mean dependence</li><UL></a><li class='tocmodule'>Standard deviation versus rank of the mean</li></UL><a href="#S4"><br><li class='tocsection'>Section 4: Individual array quality</li><UL></a><li class='tocmodule'>MA plots</li></UL></UL><hr><a name="arraymetadata" id="arraymetadata-h" href="javascript: toggle('arraymetadata')" style="text-decoration:none;font-weight:bold;font-size:larger">- Array metadata and outlier detection overview</a><br>
+
+<div id="arraymetadata-b" style="display:block">
+<table style="margin-left:auto;text-align:right;" border="1">
+<tr>
+<td style="font-weight:bold"> </td><td style="font-weight:bold">array</td><td style="font-weight:bold">sampleNames</td><td style="font-weight:bold"><a href="#hm">*1</a></td><td style="font-weight:bold"><a href="#box">*2</a></td><td style="font-weight:bold"><a href="#ma">*3</a></td><td style="font-weight:bold">title</td><td style="font-weight:bold">characteristics_ch1.1</td><td style="font-weight:bold">characteristics_ch1.2</td><td style="font-weight:bold">characteristics_ch1.3</td><td style="font-weight:bold">characteristics_ch1.4</td><td style="font-weight:bold">characteristics_ch1.5</td><td style="font-weight:bold">characteristics_ch1.6</td><td style="font-weight:bold">characteristics_ch1.7</td><td style="font-weight:bold">description</td><td style="font-weight:bold">age:ch1</td><td style="font-weight:bold">braak:ch1</td><td style="font-weight:bold">group:ch1</td><td style="font-weight:bold">mmse:ch1</td><td style="font-weight:bold">nft:ch1</td><td style="font-weight:bold">pmi:ch1</td><td style="font-weight:bold">Sex:ch1</td><td style="font-weight:bold">Condition</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(1)'></td><td bgcolor="#ffffff">1</td><td bgcolor="#ffffff">GSM21215</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Control  976</td><td bgcolor="#ffffff">group: Control</td><td bgcolor="#ffffff">nft: 8</td><td bgcolor="#ffffff">braak: 3</td><td bgcolor="#ffffff">age: 85</td><td bgcolor="#ffffff">mmse: 30</td><td bgcolor="#ffffff">Sex: M</td><td bgcolor="#ffffff">pmi: 2</td><td bgcolor="#ffffff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">85</td><td bgcolor="#ffffff">3</td><td bgcolor="#ffffff">Control</td><td bgcolor="#ffffff">30</td><td bgcolor="#ffffff">8</td><td bgcolor="#ffffff">2</td><td bgcolor="#ffffff">M</td><td bgcolor="#ffffff">CTRL</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(2)'></td><td bgcolor="#e0e0f0">2</td><td bgcolor="#d0d0ff">GSM21217</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff"></td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Control 1003</td><td bgcolor="#e0e0f0">group: Control</td><td bgcolor="#d0d0ff">nft: 7</td><td bgcolor="#e0e0f0">braak: 2</td><td bgcolor="#d0d0ff">age: 80</td><td bgcolor="#e0e0f0">mmse: 26</td><td bgcolor="#d0d0ff">Sex: M</td><td bgcolor="#e0e0f0">pmi: 2.25</td><td bgcolor="#d0d0ff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">80</td><td bgcolor="#d0d0ff">2</td><td bgcolor="#e0e0f0">Control</td><td bgcolor="#d0d0ff">26</td><td bgcolor="#e0e0f0">7</td><td bgcolor="#d0d0ff">2.25</td><td bgcolor="#e0e0f0">M</td><td bgcolor="#d0d0ff">CTRL</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(3)'></td><td bgcolor="#ffffff">3</td><td bgcolor="#ffffff">GSM21218</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Control 1008</td><td bgcolor="#ffffff">group: Control</td><td bgcolor="#ffffff">nft: 2</td><td bgcolor="#ffffff">braak: 2</td><td bgcolor="#ffffff">age: 92</td><td bgcolor="#ffffff">mmse: 26</td><td bgcolor="#ffffff">Sex: F</td><td bgcolor="#ffffff">pmi: 2.45</td><td bgcolor="#ffffff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">92</td><td bgcolor="#ffffff">2</td><td bgcolor="#ffffff">Control</td><td bgcolor="#ffffff">26</td><td bgcolor="#ffffff">2</td><td bgcolor="#ffffff">2.45</td><td bgcolor="#ffffff">F</td><td bgcolor="#ffffff">CTRL</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(4)'></td><td bgcolor="#e0e0f0">4</td><td bgcolor="#d0d0ff">GSM21219</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff"></td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Control 1012</td><td bgcolor="#e0e0f0">group: Control</td><td bgcolor="#d0d0ff">nft: 0.4</td><td bgcolor="#e0e0f0">braak: 4</td><td bgcolor="#d0d0ff">age: 80</td><td bgcolor="#e0e0f0">mmse: 26</td><td bgcolor="#d0d0ff">Sex: M</td><td bgcolor="#e0e0f0">pmi: 3</td><td bgcolor="#d0d0ff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">80</td><td bgcolor="#d0d0ff">4</td><td bgcolor="#e0e0f0">Control</td><td bgcolor="#d0d0ff">26</td><td bgcolor="#e0e0f0">0.4</td><td bgcolor="#d0d0ff">3</td><td bgcolor="#e0e0f0">M</td><td bgcolor="#d0d0ff">CTRL</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(5)'></td><td bgcolor="#ffffff">5</td><td bgcolor="#ffffff">GSM21220</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Control 1015</td><td bgcolor="#ffffff">group: Control</td><td bgcolor="#ffffff">nft: 0.4</td><td bgcolor="#ffffff">braak: 1</td><td bgcolor="#ffffff">age: 75</td><td bgcolor="#ffffff">mmse: 29</td><td bgcolor="#ffffff">Sex: M</td><td bgcolor="#ffffff">pmi: 3.35</td><td bgcolor="#ffffff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">75</td><td bgcolor="#ffffff">1</td><td bgcolor="#ffffff">Control</td><td bgcolor="#ffffff">29</td><td bgcolor="#ffffff">0.4</td><td bgcolor="#ffffff">3.35</td><td bgcolor="#ffffff">M</td><td bgcolor="#ffffff">CTRL</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(6)'></td><td bgcolor="#e0e0f0">6</td><td bgcolor="#d0d0ff">GSM21221</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff"></td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Control 1018</td><td bgcolor="#e0e0f0">group: Control</td><td bgcolor="#d0d0ff">nft: 4.8</td><td bgcolor="#e0e0f0">braak: 3</td><td bgcolor="#d0d0ff">age: 97</td><td bgcolor="#e0e0f0">mmse: 29</td><td bgcolor="#d0d0ff">Sex: F</td><td bgcolor="#e0e0f0">pmi: 2.75</td><td bgcolor="#d0d0ff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">97</td><td bgcolor="#d0d0ff">3</td><td bgcolor="#e0e0f0">Control</td><td bgcolor="#d0d0ff">29</td><td bgcolor="#e0e0f0">4.8</td><td bgcolor="#d0d0ff">2.75</td><td bgcolor="#e0e0f0">F</td><td bgcolor="#d0d0ff">CTRL</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(7)'></td><td bgcolor="#ffffff">7</td><td bgcolor="#ffffff">GSM21226</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Control 1030</td><td bgcolor="#ffffff">group: Control</td><td bgcolor="#ffffff">nft: 0</td><td bgcolor="#ffffff">braak: 1</td><td bgcolor="#ffffff">age: 95</td><td bgcolor="#ffffff">mmse: 28</td><td bgcolor="#ffffff">Sex: M</td><td bgcolor="#ffffff">pmi: 1.75</td><td bgcolor="#ffffff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">95</td><td bgcolor="#ffffff">1</td><td bgcolor="#ffffff">Control</td><td bgcolor="#ffffff">28</td><td bgcolor="#ffffff">0</td><td bgcolor="#ffffff">1.75</td><td bgcolor="#ffffff">M</td><td bgcolor="#ffffff">CTRL</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(8)'></td><td bgcolor="#e0e0f0">8</td><td bgcolor="#d0d0ff">GSM21231</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff"></td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Control 1039</td><td bgcolor="#e0e0f0">group: Control</td><td bgcolor="#d0d0ff">nft: 0.3</td><td bgcolor="#e0e0f0">braak: 1</td><td bgcolor="#d0d0ff">age: 77</td><td bgcolor="#e0e0f0">mmse: 28</td><td bgcolor="#d0d0ff">Sex: M</td><td bgcolor="#e0e0f0">pmi: 3.5</td><td bgcolor="#d0d0ff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">77</td><td bgcolor="#d0d0ff">1</td><td bgcolor="#e0e0f0">Control</td><td bgcolor="#d0d0ff">28</td><td bgcolor="#e0e0f0">0.3</td><td bgcolor="#d0d0ff">3.5</td><td bgcolor="#e0e0f0">M</td><td bgcolor="#d0d0ff">CTRL</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(9)'></td><td bgcolor="#ffffff">9</td><td bgcolor="#ffffff">GSM21232</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Control 1040</td><td bgcolor="#ffffff">group: Control</td><td bgcolor="#ffffff">nft: 1.3</td><td bgcolor="#ffffff">braak: 2</td><td bgcolor="#ffffff">age: 87</td><td bgcolor="#ffffff">mmse: 27</td><td bgcolor="#ffffff">Sex: M</td><td bgcolor="#ffffff">pmi: 2</td><td bgcolor="#ffffff">Control (MMSE>25); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">87</td><td bgcolor="#ffffff">2</td><td bgcolor="#ffffff">Control</td><td bgcolor="#ffffff">27</td><td bgcolor="#ffffff">1.3</td><td bgcolor="#ffffff">2</td><td bgcolor="#ffffff">M</td><td bgcolor="#ffffff">CTRL</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(10)'></td><td bgcolor="#e0e0f0">10</td><td bgcolor="#d0d0ff">GSM21203</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff"></td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Severe 701</td><td bgcolor="#e0e0f0">group: Severe</td><td bgcolor="#d0d0ff">nft: 21</td><td bgcolor="#e0e0f0">braak: 6</td><td bgcolor="#d0d0ff">age: 85</td><td bgcolor="#e0e0f0">mmse: 4</td><td bgcolor="#d0d0ff">Sex: M</td><td bgcolor="#e0e0f0">pmi: 2.5</td><td bgcolor="#d0d0ff">Severe AD (MMSE<14); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">85</td><td bgcolor="#d0d0ff">6</td><td bgcolor="#e0e0f0">Severe</td><td bgcolor="#d0d0ff">4</td><td bgcolor="#e0e0f0">21</td><td bgcolor="#d0d0ff">2.5</td><td bgcolor="#e0e0f0">M</td><td bgcolor="#d0d0ff">AD</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(11)'></td><td bgcolor="#ffffff">11</td><td bgcolor="#ffffff">GSM21206</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Severe 723</td><td bgcolor="#ffffff">group: Severe</td><td bgcolor="#ffffff">nft: 58.2</td><td bgcolor="#ffffff">braak: 6</td><td bgcolor="#ffffff">age: 65</td><td bgcolor="#ffffff">mmse: 5</td><td bgcolor="#ffffff">Sex: F</td><td bgcolor="#ffffff">pmi: 3.05</td><td bgcolor="#ffffff">Severe AD (MMSE<14); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">65</td><td bgcolor="#ffffff">6</td><td bgcolor="#ffffff">Severe</td><td bgcolor="#ffffff">5</td><td bgcolor="#ffffff">58.2</td><td bgcolor="#ffffff">3.05</td><td bgcolor="#ffffff">F</td><td bgcolor="#ffffff">AD</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(12)'></td><td bgcolor="#e0e0f0">12</td><td bgcolor="#d0d0ff">GSM21207</td><td bgcolor="#e0e0f0">x</td><td bgcolor="#d0d0ff"></td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Severe 807</td><td bgcolor="#e0e0f0">group: Severe</td><td bgcolor="#d0d0ff">nft: 62.5</td><td bgcolor="#e0e0f0">braak: 6</td><td bgcolor="#d0d0ff">age: 93</td><td bgcolor="#e0e0f0">mmse: 11</td><td bgcolor="#d0d0ff">Sex: M</td><td bgcolor="#e0e0f0">pmi: 3.08</td><td bgcolor="#d0d0ff">Severe AD (MMSE<14); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">93</td><td bgcolor="#d0d0ff">6</td><td bgcolor="#e0e0f0">Severe</td><td bgcolor="#d0d0ff">11</td><td bgcolor="#e0e0f0">62.5</td><td bgcolor="#d0d0ff">3.08</td><td bgcolor="#e0e0f0">M</td><td bgcolor="#d0d0ff">AD</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(13)'></td><td bgcolor="#ffffff">13</td><td bgcolor="#ffffff">GSM21208</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">x</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Severe 819</td><td bgcolor="#ffffff">group: Severe</td><td bgcolor="#ffffff">nft: 18.5</td><td bgcolor="#ffffff">braak: 6</td><td bgcolor="#ffffff">age: 79</td><td bgcolor="#ffffff">mmse: 11</td><td bgcolor="#ffffff">Sex: F</td><td bgcolor="#ffffff">pmi: 3</td><td bgcolor="#ffffff">Severe AD (MMSE<14); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">79</td><td bgcolor="#ffffff">6</td><td bgcolor="#ffffff">Severe</td><td bgcolor="#ffffff">11</td><td bgcolor="#ffffff">18.5</td><td bgcolor="#ffffff">3</td><td bgcolor="#ffffff">F</td><td bgcolor="#ffffff">AD</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(14)'></td><td bgcolor="#e0e0f0">14</td><td bgcolor="#d0d0ff">GSM21212</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">x</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Severe 867</td><td bgcolor="#e0e0f0">group: Severe</td><td bgcolor="#d0d0ff">nft: 22.6</td><td bgcolor="#e0e0f0">braak: 5</td><td bgcolor="#d0d0ff">age: 94</td><td bgcolor="#e0e0f0">mmse: 2</td><td bgcolor="#d0d0ff">Sex: F</td><td bgcolor="#e0e0f0">pmi: 2.72</td><td bgcolor="#d0d0ff">Severe AD (MMSE<14); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">94</td><td bgcolor="#d0d0ff">5</td><td bgcolor="#e0e0f0">Severe</td><td bgcolor="#d0d0ff">2</td><td bgcolor="#e0e0f0">22.6</td><td bgcolor="#d0d0ff">2.72</td><td bgcolor="#e0e0f0">F</td><td bgcolor="#d0d0ff">AD</td></tr>
+<tr>
+<td bgcolor="#ffffff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(15)'></td><td bgcolor="#ffffff">15</td><td bgcolor="#ffffff">GSM21213</td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff"></td><td bgcolor="#ffffff">Severe 872</td><td bgcolor="#ffffff">group: Severe</td><td bgcolor="#ffffff">nft: 24.6</td><td bgcolor="#ffffff">braak: 6</td><td bgcolor="#ffffff">age: 79</td><td bgcolor="#ffffff">mmse: 2</td><td bgcolor="#ffffff">Sex: F</td><td bgcolor="#ffffff">pmi: 3.67</td><td bgcolor="#ffffff">Severe AD (MMSE<14); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#ffffff">79</td><td bgcolor="#ffffff">6</td><td bgcolor="#ffffff">Severe</td><td bgcolor="#ffffff">2</td><td bgcolor="#ffffff">24.6</td><td bgcolor="#ffffff">3.67</td><td bgcolor="#ffffff">F</td><td bgcolor="#ffffff">AD</td></tr>
+<tr>
+<td bgcolor="#d0d0ff"><input type='checkbox' name='ReportObjectCheckBoxes' value='' onchange='checkboxEvent(16)'></td><td bgcolor="#e0e0f0">16</td><td bgcolor="#d0d0ff">GSM21229</td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff"></td><td bgcolor="#e0e0f0"></td><td bgcolor="#d0d0ff">Severe 1036</td><td bgcolor="#e0e0f0">group: Severe</td><td bgcolor="#d0d0ff">nft: 21.5</td><td bgcolor="#e0e0f0">braak: 6</td><td bgcolor="#d0d0ff">age: 93</td><td bgcolor="#e0e0f0">mmse: 7</td><td bgcolor="#d0d0ff">Sex: F</td><td bgcolor="#e0e0f0">pmi: 3</td><td bgcolor="#d0d0ff">Severe AD (MMSE<14); correlation of the expression of each gene was tested with MiniMental Status Examination (MMSE) and neurofibrillary tangle (NFT) scores</td><td bgcolor="#e0e0f0">93</td><td bgcolor="#d0d0ff">6</td><td bgcolor="#e0e0f0">Severe</td><td bgcolor="#d0d0ff">7</td><td bgcolor="#e0e0f0">21.5</td><td bgcolor="#d0d0ff">3</td><td bgcolor="#e0e0f0">F</td><td bgcolor="#d0d0ff">AD</td></tr>
+</table>
+<br>The columns named *1, *2, ... indicate the calls from the different outlier detection methods:<OL><LI> outlier detection by <a href="#hm">Distances between arrays</a></LI><LI> outlier detection by <a href="#box">Boxplots</a></LI><LI> outlier detection by <a href="#ma">MA plots</a></LI></OL>The outlier detection criteria are explained below in the respective sections. Arrays that were called outliers by at least one criterion are marked by checkbox selection in this table, and are indicated by highlighted lines or points in some of the plots below. By clicking the checkboxes in the table, or on the corresponding points/lines in the plots, you can modify the selection. To reset the selection, reload the HTML page in your browser.<br><br>At the scope covered by this software, outlier detection is a poorly defined question, and there is no 'right' or 'wrong' answer. These are hints which are intended to be followed up manually. If you want to automate outlier detection, you need to limit the scope to a particular platform and experimental design, and then choose and calibrate the metrics used.<br></div><hr><h2><a name= 'S1'>Section 1: Between array comparison</a></h2>
+
+<a name="hm" id="hm-h" href="javascript: toggle('hm')" style="text-decoration:none;font-weight:bold;font-size:larger">- Figure 1: Distances between arrays.</a><br>
+
+<div id="hm-b" style="display:block">
+<img src="hm.png" border="0" alt="hm.png" id="Figls:hm"></img><br>
+<b>Figure 1</b><a href="hm.pdf"> (PDF file)</a> shows a false color heatmap of the distances between arrays. The color scale is chosen to cover the range of distances encountered in the dataset. Patterns in this plot can indicate clustering of the arrays either because of intended biological or unintended experimental factors (batch effects). The distance <i>d<sub>ab</sub></i> between two arrays <i>a</i> and <i>b</i> is computed as the mean absolute difference (L<sub>1</sub>-distance) between the data of the arrays (using the data from all probes without filtering). In formula, <i>d<sub>ab</sub></i> = mean | <i>M<sub>ai</sub> - M<sub>bi</sub></i> |, where <i>M<sub>ai</sub></i> is the value of the <i>i</i>-th probe on the <i>a</i>-th array. Outlier detection was performed by looking for arrays for which the sum of the distances to all other arrays, <i>S<sub>a</sub></i> = &Sigma;<sub><i>b</i></sub> <i>d<sub>ab</sub></i> was exceptionally large. One such array was detected, and it is marked by an asterisk, *.<br><br><br>
+</div>
+
+<a name="out hm" id="out hm-h" href="javascript: toggle('out hm')" style="text-decoration:none;font-weight:bold;font-size:larger">+ Figure 2: Outlier detection for Distances between arrays.</a><br>
+
+<div id="out hm-b" style="display:none">
+<img src="out hm.png" border="0" alt="out hm.png" id="Figls:out hm"></img><br>
+<b>Figure 2</b><a href="out hm.pdf"> (PDF file)</a> shows a bar chart of the sum of distances to other arrays <i>S<sub>a</sub></i>, the outlier detection criterion from the previous figure. The bars are shown in the original order of the arrays. Based on the distribution of the values across all arrays, a threshold of 17.1 was determined, which is indicated by the vertical line. One array exceeded the threshold and was considered an outlier.<br><br><br>
+</div>
+
+<a name="pca" id="pca-h" href="javascript: toggle('pca')" style="text-decoration:none;font-weight:bold;font-size:larger">- Figure 3: Principal Component Analysis.</a><br>
+
+<div id="pca-b" style="display:block">
+<table border="1">
+<tr>
+<td><?xml version="1.0" encoding="ISO8859-1"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="345.6px" height="345.6px" viewBox="0 0 345.6 345.6" version="1.1" id="Fig:pca">
+  <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
+    <gridsvg:generator name="gridSVG" version="1.7-2" time="2021-01-12 16:04:41"/>
+    <gridsvg:argument name="name" value="QC/pca.svg"/>
+    <gridsvg:argument name="exportCoords" value="none"/>
+    <gridsvg:argument name="exportMappings" value="none"/>
+    <gridsvg:argument name="exportJS" value="none"/>
+    <gridsvg:argument name="res" value="72"/>
+    <gridsvg:argument name="prefix" value="Fig:pca"/>
+    <gridsvg:argument name="addClasses" value="FALSE"/>
+    <gridsvg:argument name="indent" value="TRUE"/>
+    <gridsvg:argument name="htmlWrapper" value="FALSE"/>
+    <gridsvg:argument name="usePaths" value="none"/>
+    <gridsvg:argument name="uniqueNames" value="TRUE"/>
+    <gridsvg:separator name="id.sep" value="."/>
+    <gridsvg:separator name="gPath.sep" value="::"/>
+    <gridsvg:separator name="vpPath.sep" value="::"/>
+  </metadata>
+  <g transform="translate(0, 345.6) scale(1, -1)">
+    <g id="Fig:pcagridSVG" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="0.75" font-size="12" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0" font-weight="normal" font-style="normal">
+      <defs>
+        <symbol id="Fig:pcagridSVG.pch19" viewBox="-5 -5 10 10" overflow="visible">
+          <circle cx="0" cy="0" r="3.75"/>
+        </symbol>
+      </defs>
+      <g id="Fig:pcaplot_01.background.1">
+        <rect id="Fig:pcaplot_01.background.1.1" x="0" y="0" width="345.6" height="345.6" transform="" fill="none" stroke="none" stroke-opacity="0" fill-opacity="0"/>
+      </g>
+      <g id="Fig:pcaplot_01.toplevel.vp.1" font-size="12">
+        <g id="Fig:pcaplot_01.xlab.vp.1">
+          <g id="Fig:pcaplot_01.xlab.1">
+            <g id="Fig:pcaplot_01.xlab.1.1" transform="translate(185.59, 39.61)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.xlab.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.xlab.1.1.text" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.xlab.1.1.tspan.1" dy="4.31" x="0">PC1</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.ylab.vp.1">
+          <g id="Fig:pcaplot_01.ylab.1">
+            <g id="Fig:pcaplot_01.ylab.1.1" transform="translate(10.31, 180.7)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ylab.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ylab.1.1.text" transform="rotate(-90)" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ylab.1.1.tspan.1" dy="4.31" x="0">PC2</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.figure.vp.1"/>
+        <defs>
+          <clipPath id="Fig:pcaplot_01.panel.1.1.vp.1.clipPath">
+            <rect x="54.58" y="74.11" width="262.01" height="213.18" fill="none" stroke="none"/>
+          </clipPath>
+        </defs>
+        <g id="Fig:pcaplot_01.panel.1.1.vp.1" clip-path="url(#Fig:pcaplot_01.panel.1.1.vp.1.clipPath)"/>
+        <g id="Fig:pcaplot_01.strip.1.1.off.vp.1">
+          <g id="Fig:pcaplot_01.ticks.top.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.1" points="87.89,287.29 87.89,292.96" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.2" points="137.73,287.29 137.73,292.96" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.3" points="187.57,287.29 187.57,292.96" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.4" points="237.41,287.29 237.41,292.96" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.top.panel.1.1.1.5" points="287.25,287.29 287.25,292.96" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.strip.left.1.1.off.vp.1">
+          <g id="Fig:pcaplot_01.ticks.left.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.1" points="54.58,110.67 48.91,110.67" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.2" points="54.58,160.51 48.91,160.51" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.3" points="54.58,210.34 48.91,210.34" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.left.panel.1.1.1.4" points="54.58,260.18 48.91,260.18" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+          <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1">
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1" transform="translate(43.25, 110.67)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.1.tspan.1" dy="3.59" x="0">-50</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2" transform="translate(43.25, 160.51)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.2.tspan.1" dy="3.59" x="0">0</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3" transform="translate(43.25, 210.34)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.3.tspan.1" dy="3.59" x="0">50</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4" transform="translate(43.25, 260.18)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.left.panel.1.1.1.4.tspan.1" dy="3.59" x="0">100</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.panel.1.1.off.vp.1">
+          <g id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.1" points="87.89,74.11 87.89,68.44" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.2" points="137.73,74.11 137.73,68.44" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.3" points="187.57,74.11 187.57,68.44" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.4" points="237.41,74.11 237.41,68.44" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.bottom.panel.1.1.1.5" points="287.25,74.11 287.25,68.44" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+          <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1">
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1" transform="translate(87.89, 62.77)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.1.tspan.1" dy="7.18" x="0">-50</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2" transform="translate(137.73, 62.77)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.2.tspan.1" dy="7.18" x="0">0</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3" transform="translate(187.57, 62.77)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.3.tspan.1" dy="7.18" x="0">50</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4" transform="translate(237.41, 62.77)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.4.tspan.1" dy="7.18" x="0">100</tspan>
+                </text>
+              </g>
+            </g>
+            <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5" transform="translate(287.25, 62.77)" stroke-width="0.1">
+              <g id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5.scale" transform="scale(1, -1)">
+                <text x="0" y="0" id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="9.6" font-weight="normal" font-style="normal">
+                  <tspan id="Fig:pcaplot_01.ticklabels.bottom.panel.1.1.1.5.tspan.1" dy="7.18" x="0">150</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+          <g id="Fig:pcaplot_01.ticks.right.panel.1.1.1">
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.1" points="316.59,110.67 322.26,110.67" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.2" points="316.59,160.51 322.26,160.51" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.3" points="316.59,210.34 322.26,210.34" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+            <polyline id="Fig:pcaplot_01.ticks.right.panel.1.1.1.4" points="316.59,260.18 322.26,260.18" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="0.75" stroke-opacity="1" fill="none"/>
+          </g>
+        </g>
+        <defs>
+          <clipPath id="Fig:pcaplot_01.panel.1.1.vp.2.clipPath">
+            <rect x="54.58" y="74.11" width="262.01" height="213.18" fill="none" stroke="none"/>
+          </clipPath>
+        </defs>
+        <g id="Fig:pcaplot_01.panel.1.1.vp.2" clip-path="url(#Fig:pcaplot_01.panel.1.1.vp.2.clipPath)">
+          <g id="Fig:pcaplot_01.xyplot.points.panel.1.1.1">
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.1" href="#Fig:pcagridSVG.pch19" x="88.22" y="193.68" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.2" href="#Fig:pcagridSVG.pch19" x="128.09" y="221.35" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.3" href="#Fig:pcagridSVG.pch19" x="74.05" y="141.15" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.4" href="#Fig:pcagridSVG.pch19" x="132.66" y="146.75" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.5" href="#Fig:pcagridSVG.pch19" x="89.97" y="136.38" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.6" href="#Fig:pcagridSVG.pch19" x="70.67" y="147.41" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.7" href="#Fig:pcagridSVG.pch19" x="141.47" y="142.29" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.8" href="#Fig:pcagridSVG.pch19" x="101.84" y="134.57" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.9" href="#Fig:pcagridSVG.pch19" x="140.66" y="142.86" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.10" href="#Fig:pcagridSVG.pch19" x="200.13" y="220.93" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.11" href="#Fig:pcagridSVG.pch19" x="88.24" y="132.71" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.12" href="#Fig:pcagridSVG.pch19" x="300.5" y="87.2" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.13" href="#Fig:pcagridSVG.pch19" x="168.14" y="274.2" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.14" href="#Fig:pcagridSVG.pch19" x="187.72" y="131.9" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.15" href="#Fig:pcagridSVG.pch19" x="205.28" y="181.62" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+            <use id="Fig:pcaplot_01.xyplot.points.panel.1.1.1.16" href="#Fig:pcagridSVG.pch19" x="86.01" y="133.09" width="8" height="8" transform=" translate(-4,-4)" stroke="rgb(31,120,180)" stroke-width="0.94" opacity="1" fill="rgb(31,120,180)" font-size="8" stroke-opacity="1" fill-opacity="1" font-weight="normal" font-style="normal"/>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01.panel.1.1.off.vp.2">
+          <g id="Fig:pcaplot_01.border.panel.1.1.1">
+            <rect id="Fig:pcaplot_01.border.panel.1.1.1.1" x="54.58" y="74.11" width="262.01" height="213.18" transform="" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="0.75" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0"/>
+          </g>
+        </g>
+        <g id="Fig:pcaplot_01..1"/>
+      </g>
+    </g>
+  </g>
+</svg></td><td><table id='Tab:pca'><tr bgcolor='#d0d0ff'><td>array</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>sampleNames</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>title</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>characteristics_ch1.2</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.3</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>characteristics_ch1.4</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.5</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>characteristics_ch1.6</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.7</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>description</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>age:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>braak:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>group:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>mmse:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>nft:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>pmi:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>Sex:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>Condition</td><td style='font-weight:bold'></td></tr>
+</table></td></tr>
+</table>
+<br>
+<b>Figure 3</b><a href="pca.pdf"> (PDF file)</a> shows a scatterplot of the arrays along the first two principal components. You can use this plot to explore if the arrays cluster, and whether this is according to an intended experimental factor (you can indicate such a factor by color using the 'intgroup' argument), or according to unintended causes such as batch effects. Move the mouse over the points to see the sample names.<BR>Principal component analysis is a dimension reduction and visualisation technique that is here used to project the multivariate data vector of each array into a two-dimensional plot, such that the spatial arrangement of the points in the plot reflects the overall data (dis)similarity between the arrays.<br><br><br>
+</div><hr><h2><a name= 'S2'>Section 2: Array intensity distributions</a></h2>
+
+<a name="box" id="box-h" href="javascript: toggle('box')" style="text-decoration:none;font-weight:bold;font-size:larger">- Figure 4: Boxplots.</a><br>
+
+<div id="box-b" style="display:block">
+<img src="box.png" border="0" alt="box.png" id="Figls:box"></img><br>
+<b>Figure 4</b><a href="box.pdf"> (PDF file)</a> shows boxplots representing summaries of the signal intensity distributions of the arrays. Each box corresponds to one array. Typically, one expects the boxes to have similar positions and widths. If the distribution of an array is very different from the others, this may indicate an experimental problem. Outlier detection was performed by computing the Kolmogorov-Smirnov statistic <i>K<sub>a</sub></i> between each array's distribution and the distribution of the pooled data.<br><br><br>
+</div>
+
+<a name="out box" id="out box-h" href="javascript: toggle('out box')" style="text-decoration:none;font-weight:bold;font-size:larger">+ Figure 5: Outlier detection for Boxplots.</a><br>
+
+<div id="out box-b" style="display:none">
+<img src="out box.png" border="0" alt="out box.png" id="Figls:out box"></img><br>
+<b>Figure 5</b><a href="out box.pdf"> (PDF file)</a> shows a bar chart of the Kolmogorov-Smirnov statistic <i>K<sub>a</sub></i>, the outlier detection criterion from the previous figure. The bars are shown in the original order of the arrays. Based on the distribution of the values across all arrays, a threshold of 0.0018 was determined, which is indicated by the vertical line. 2 arrays exceeded the threshold and were considered outliers.<br><br><br>
+</div>
+
+<a name="dens" id="dens-h" href="javascript: toggle('dens')" style="text-decoration:none;font-weight:bold;font-size:larger">- Figure 6: Density plots.</a><br>
+
+<div id="dens-b" style="display:block">
+<table border="1">
+<tr>
+<td><?xml version="1.0" encoding="ISO8859-1"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="288px" height="252px" viewBox="0 0 288 252" version="1.1" id="Fig:dens">
   <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
-    <gridsvg:generator name="gridSVG" version="1.7-2" time="2021-01-12 15:29:18"/>
-    <gridsvg:argument name="name" value="GSE1297 QC/dens.svg"/>
+    <gridsvg:generator name="gridSVG" version="1.7-2" time="2021-01-12 16:04:43"/>
+    <gridsvg:argument name="name" value="QC/dens.svg"/>
     <gridsvg:argument name="exportCoords" value="none"/>
     <gridsvg:argument name="exportMappings" value="none"/>
     <gridsvg:argument name="exportJS" value="none"/>
@@ -167,4 +489,68 @@
       </g>
     </g>
   </g>
-</svg>
+</svg></td><td><table id='Tab:dens'><tr bgcolor='#d0d0ff'><td>array</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>sampleNames</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>title</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>characteristics_ch1.2</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.3</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>characteristics_ch1.4</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.5</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>characteristics_ch1.6</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>characteristics_ch1.7</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>description</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>age:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>braak:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>group:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>mmse:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>nft:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>pmi:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#e0e0f0'><td>Sex:ch1</td><td style='font-weight:bold'></td></tr>
+
+<tr bgcolor='#d0d0ff'><td>Condition</td><td style='font-weight:bold'></td></tr>
+</table></td></tr>
+</table>
+<br>
+<b>Figure 6</b><a href="dens.pdf"> (PDF file)</a> shows density estimates (smoothed histograms) of the data. Typically, the distributions of the arrays should have similar shapes and ranges. Arrays whose distributions are very different from the others should be considered for possible problems. Various features of the distributions can be indicative of quality related phenomena. For instance, high levels of background will shift an array's distribution to the right. Lack of signal diminishes its right right tail. A bulge at the upper end of the intensity range often indicates signal saturation.<br><br><br>
+</div><hr><h2><a name= 'S3'>Section 3: Variance mean dependence</a></h2>
+
+<a name="msd" id="msd-h" href="javascript: toggle('msd')" style="text-decoration:none;font-weight:bold;font-size:larger">- Figure 7: Standard deviation versus rank of the mean.</a><br>
+
+<div id="msd-b" style="display:block">
+<img src="msd.png" border="0" alt="msd.png" id="Figls:msd"></img><br>
+<b>Figure 7</b><a href="msd.pdf"> (PDF file)</a> shows a density plot of the standard deviation of the intensities across arrays on the <i>y</i>-axis versus the rank of their mean on the <i>x</i>-axis. The red dots, connected by lines, show the running median of the standard deviation. After normalisation and transformation to a logarithm(-like) scale, one typically expects the red line to be approximately horizontal, that is, show no substantial trend. In some cases, a hump on the right hand of the x-axis can be observed and is symptomatic of a saturation of the intensities.<br><br><br>
+</div><hr><h2><a name= 'S4'>Section 4: Individual array quality</a></h2>
+
+<a name="ma" id="ma-h" href="javascript: toggle('ma')" style="text-decoration:none;font-weight:bold;font-size:larger">- Figure 8: MA plots.</a><br>
+
+<div id="ma-b" style="display:block">
+<img src="ma.png" border="0" alt="ma.png" id="Figls:ma"></img><br>
+<b>Figure 8</b><a href="ma.pdf"> (PDF file)</a> shows MA plots. M and A are defined as:<br> M = log<sub>2</sub>(I<sub>1</sub>) - log<sub>2</sub>(I<sub>2</sub>)<br> A = 1/2 (log<sub>2</sub>(I<sub>1</sub>)+log<sub>2</sub>(I<sub>2</sub>)),<br> where I<sub>1</sub> is the intensity of the array studied,and I<sub>2</sub> is the intensity of a "pseudo"-array that consists of the median across arrays.  Typically, we expect the mass of the distribution in an MA plot to be concentrated along the M = 0 axis,  and there should be no trend in M as a function of A. If there is a trend in the lower range of A, this often  indicates that the arrays have different background intensities; this may be addressed by background correction.  A trend in the upper range of A can indicate saturation of the measurements; in mild cases, this may be addressed  by non-linear normalisation (e.g. quantile normalisation).<br> Outlier detection was performed by computing Hoeffding's statistic <i>D<sub>a</sub></i> on the joint distribution of A and M for each array.  Shown are first the 4 arrays with the highest values of <i>D<sub>a</sub></i>, then the 4 arrays with the lowest values.  The value of <i>D<sub>a</sub></i> is shown in the panel headings.  0 arrays had <i>D<sub>a</sub></i>&gt;0.15 and were marked as outliers.  For more information on Hoeffing's <i>D</i>-statistic, please see the manual page of the function  <tt>hoeffd</tt> in the <tt>Hmisc</tt> package.<br><br><br>
+</div>
+
+<a name="out ma" id="out ma-h" href="javascript: toggle('out ma')" style="text-decoration:none;font-weight:bold;font-size:larger">+ Figure 9: Outlier detection for MA plots.</a><br>
+
+<div id="out ma-b" style="display:none">
+<img src="out ma.png" border="0" alt="out ma.png" id="Figls:out ma"></img><br>
+<b>Figure 9</b><a href="out ma.pdf"> (PDF file)</a> shows a bar chart of the <i>D<sub>a</sub></i>, the outlier detection criterion from the previous figure. The bars are shown in the original order of the arrays. A threshold of 0.15 was used, which is indicated by the vertical line. None of the arrays exceeded the threshold and was considered an outlier.<br><br><br>
+</div><hr><span style="font-size:9pt">This report has been created with arrayQualityMetrics 3.44.0 under R version 4.0.3 (2020-10-10).</span><hr>
+<br/><br/><font size="-2">(Page generated on Tue Jan 12 16:04:45 2021 by <a href="http://www.embl.de/~gpau/hwriter/index.html">hwriter</a> )</font><br/>
+</body></html>
