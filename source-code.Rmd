@@ -1,7 +1,5 @@
 ---
-title: | 
- <center>Differential Gene Expression Data from Human Central Nervous System across Alzheimer’s Disease,</center>
- <center>Lewy Body Diseases, and Amyotrophic Lateral Sclerosis and Frontotemporal Dementia Spectrum</center>
+title: Differential Gene Expression Data from the Human Central Nervous System across Alzheimer’s Disease, Lewy Body Diseases, and the Amyotrophic Lateral Sclerosis and Frontotemporal Dementia Spectrum
 author: Ayush Noori, Aziz M. Mezlini, Bradley T. Hyman, Alberto Serrano-Pozo, Sudeshna Das
 bibliography: references.bib
 csl: neurobiology-of-disease.csl
