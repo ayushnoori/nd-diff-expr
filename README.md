@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4501048.svg)](https://doi.org/10.5281/zenodo.4501048)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4501047.svg)](https://doi.org/10.5281/zenodo.4501047)
 
 # About
 > In [Noori et al. (2020)](https://doi.org/10.1016/j.nbd.2020.105225), we performed a systematic review and meta-analysis of human CNS transcriptomic datasets in the public [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/) and [ArrayExpress](https://www.ebi.ac.uk/arrayexpress/) repositories across Alzheimer's disease (AD), Lewy body diseases (LBD), and the amyotrophic lateral sclerosis and frontotemporal dementia (ALS-FTD) disease spectrum. Here, we provide the source code to generate the data quality reports and perform differential expression analyses for these datasets. Please see our accompanying publication in *Data In Brief* for additional information.
