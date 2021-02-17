@@ -30,4 +30,4 @@ Our vignette is available at [ayushnoori.github.io/nd-diff-expr](https://ayushno
 <br><br>
 
 # Acknowledgements
-This work was supported by the Alzheimer’s Association (AACF-17-524184 to AS-P), the National Institute of Aging (K08AG064039 to AS-P and P30AG062421 to BTH and SD), the Rainwater Charitable Foundation (to BTH), and a MassLife Sciences MassCATS award (to BTH and SD). The funding sources had no role in study design; data collection, analysis and interpretation; or manuscript preparation.
+This work was supported by the Alzheimer’s Association (AACF-17-524184 to AS-P), the National Institute on Aging (K08AG064039 to AS-P and P30AG062421 to BTH and SD), the Rainwater Charitable Foundation (to BTH), and a MassLife Sciences MassCATS award (to BTH and SD). The funding sources had no role in study design; data collection, analysis and interpretation; or manuscript preparation.
