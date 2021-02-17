@@ -13,11 +13,11 @@ Please install [R](https://www.r-project.org/) to run our code, as well as all r
 Our vignette is available at [ayushnoori.github.io/nd-diff-expr](https://ayushnoori.github.io/nd-diff-expr/).
 <br><br>
 
-# Citation
+# Citations
 
-**Research Paper:** Noori, A.,<sup>1,2,3,4</sup>, Mezlini, A.M.,<sup>2,3,4,5</sup>, Hyman, B.T.,<sup>2,4,5</sup>, Serrano-Pozo, A.,<sup>2,4,5*</sup>, Das, S.,<sup>2,3,4,5</sup>. 2020. Systematic review and meta-analysis of human transcriptomics reveals neuroinflammation, deficient energy metabolism, and proteostasis failure across neurodegeneration. Neurobiology of Disease  149, 105225. https://doi.org/10.1016/j.nbd.2020.105225
+**Research Paper:** Noori, A.,<sup>1,2,3,4</sup>, Mezlini, A.M.,<sup>2,3,4,5</sup>, Hyman, B.T.,<sup>2,4,5</sup>, Serrano-Pozo, A.,<sup>2,4,5*</sup>, Das, S.<sup>2,3,4,5</sup>. (2021). Systematic review and meta-analysis of human transcriptomics reveals neuroinflammation, deficient energy metabolism, and proteostasis failure across neurodegeneration. *Neurobiology of Disease*, 149, 105225. doi: [10.1016/j.nbd.2020.105225](https://doi.org/10.1016/j.nbd.2020.105225).
 
-**Methods Paper:** Noori, A.,<sup>1,2,3,4</sup>, Mezlini, A.M.,<sup>2,3,4,5</sup>, Hyman, B.T.,<sup>2,4,5</sup>, Serrano-Pozo, A.,<sup>2,4,5*</sup>, Das, S.,<sup>2,3,4,5</sup>. 2021. Central nervous system differential gene expression data across Alzheimer’s disease, Lewy body diseases, and ALS-FTD. In press.
+**Methods Paper:** Noori, A.,<sup>1,2,3,4</sup>, Mezlini, A.M.,<sup>2,3,4,5</sup>, Hyman, B.T.,<sup>2,4,5</sup>, Serrano-Pozo, A.,<sup>2,4,5*</sup>, Das, S.<sup>2,3,4,5</sup>. (2021). Central nervous system differential gene expression data across Alzheimer’s disease, Lewy body diseases, and ALS-FTD. *Data in Brief*, 35, 106863. doi: [10.1016/j.dib.2021.106863](https://doi.org/10.1016/j.dib.2021.106863).
 
 ### Affiliations
 1.	Harvard College, Cambridge, MA 02138, United States of America
