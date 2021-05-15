@@ -10,7 +10,7 @@ Please install [R](https://www.r-project.org/) to run our code, as well as all r
 <br><br>
 
 # Vignette
-Our vignette is available at [ayushnoori.github.io/nd-diff-expr](https://ayushnoori.github.io/nd-diff-expr/).
+Our vignette is available at [www.ayushnoori.com/nd-diff-expr](https://www.ayushnoori.com/nd-diff-expr/).
 <br><br>
 
 # Citations
